@@ -1,14 +1,5 @@
-//% weight=70 icon="\uf0e7" color=#d2691e block="STEM"
+﻿//% weight=70 icon="\uf0c3" color=#008000 block="STEM"
 namespace stem {
-    //% blockId=magnet_switch block="磁気を検知"
-    export function readMagnetSwitchStatus(): boolean {
-        pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
-        if (pins.digitalReadPin(DigitalPin.P0)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 
     //% blockId=read_temperature block="温度"
     export function readTemperature(): number {
@@ -23,8 +14,8 @@ namespace stem {
         let R0 = 0
         let volt = 0
         let B = 0
-        B = 3380.001
-        R0 = 10000.001
+        B = 3380.0
+        R0 = 10000.0
         T0 = 25 + 273.15
         volt = rawVal / 1024 * 3
         R = (0 - (10000 * volt - 30000)) / volt
@@ -33,5 +24,31 @@ namespace stem {
         // 40.64780 * R + 143.3983) / (9.579041e-4 * R ^ 3 +
         // 0.08219358 * R ^ 2 + 0.8617257 * R + 1)
         return Math.round(temp - 273.15)
+    }
+
+    //% blockId=human_detection block="人が動いた"
+    export function humanDetection(): boolean {
+        if (pins.digitalReadPin(DigitalPin.P2) == 1)
+            return true;
+        else
+            return false;
+    }
+
+    //% blockId=turn_on block="スイッチON"
+    export function turnON(): void {
+        pins.digitalWritePin(DigitalPin.P1, 1)
+    }
+
+    //% blockId=turn_off block="スイッチOFF"
+    export function turnOFF(): void {
+        pins.digitalWritePin(DigitalPin.P1, 0)
+    }
+
+    //% blockId=is_dark block="暗い"
+    export function isDark(): boolean {
+        if (input.lightLevel() < 30)
+            return true;
+        else
+            return false;
     }
 }
