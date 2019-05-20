@@ -205,7 +205,7 @@ namespace stem {
         }
     }
 
-    //% blockId=uds block="距離を測定する"
+    //% blockId=uds block="距離"
     export function get_distance() {
       pins.digitalWritePin(DigitalPin.P0, 0)
       control.waitMicros(2)
