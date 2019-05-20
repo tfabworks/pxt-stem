@@ -64,8 +64,8 @@ namespace stem {
     }
 
     //% blockId=ir_on
-    //% block="ON"
-    export function on() {
+    //% block="赤外線ON"
+    export function ir_on() {
         輸送波送信ポート設定()
 
         for (let 送信回数 = 0; 送信回数 < 繰り返し回数; 送信回数++) {
@@ -135,8 +135,8 @@ namespace stem {
     }
 
     //% blockId=ir_off
-    //% block="OFF"
-    export function off() {
+    //% block="赤外線OFF"
+    export function ir_off() {
         輸送波送信ポート設定()
 
         for (let 送信回数 = 0; 送信回数 < 繰り返し回数; 送信回数++) {
@@ -205,13 +205,13 @@ namespace stem {
         }
     }
 
-    //% blockId=uds block="距離を測定する trig %trig|echo %echo"
-    export function get(trig: DigitalPin, echo: DigitalPin): number {
-      pins.digitalWritePin(trig, 0)
+    //% blockId=uds block="距離を測定する"
+    export function get_distance() {
+      pins.digitalWritePin(DigitalPin.P0, 0)
       control.waitMicros(2)
-      pins.digitalWritePin(trig, 1)
+      pins.digitalWritePin(DigitalPin.P0, 1)
       control.waitMicros(20)
-      pins.digitalWritePin(trig, 0)
-      return pins.pulseIn(echo, PulseValue.High) * 153 / 29 / 2 / 100
+      pins.digitalWritePin(DigitalPin.P0, 0)
+      return pins.pulseIn(DigitalPin.P1, PulseValue.High) * 153 / 29 / 2 / 100
     }
 }
