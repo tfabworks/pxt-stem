@@ -40,7 +40,7 @@ namespace stem {
 
     //% blockId=ir_on
     //% block="赤外線ON"
-    export function ir_on() {
+    export function IR_ON() {
         輸送波送信ポート設定()
 
         for (let 送信回数 = 0; 送信回数 < 繰り返し回数; 送信回数++) {
@@ -111,7 +111,7 @@ namespace stem {
 
     //% blockId=ir_off
     //% block="赤外線OFF"
-    export function ir_off() {
+    export function IR_OFF() {
         輸送波送信ポート設定()
 
         for (let 送信回数 = 0; 送信回数 < 繰り返し回数; 送信回数++) {
@@ -181,7 +181,7 @@ namespace stem {
     }
 
     //% blockId=uds block="距離"
-    export function get_distance() {
+    export function getDistance() {
       pins.digitalWritePin(DigitalPin.P0, 0)
       control.waitMicros(2)
       pins.digitalWritePin(DigitalPin.P0, 1)
@@ -190,8 +190,8 @@ namespace stem {
       return pins.pulseIn(DigitalPin.P1, PulseValue.High) * 153 / 29 / 2 / 100
     }
 
-    //% blockId=read_temperature block="温度"
-    export function readTemperature(): number {
+    //% blockId=get_temperature block="温度"
+    export function getTemperature(): number {
         return calcTemperature(pins.analogReadPin(AnalogPin.P0))
     }
 
