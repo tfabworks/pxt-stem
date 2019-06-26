@@ -1,6 +1,6 @@
 ﻿//% weight=70 icon="\uf0c3" color=#008000 block="STEM"
 namespace stem {
-    export let 暗さ判定閾値 = 10
+    export let 暗さ判定閾値 = 30
 
     //% blockId=human_detection block="人が動いた"
     export function humanDetection(): boolean {
