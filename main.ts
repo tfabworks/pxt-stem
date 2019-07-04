@@ -1,4 +1,11 @@
-﻿//% weight=70 icon="\uf0c3" color=#008000 block="STEM"
+﻿enum DarkOrBrightSpecified {
+    //% block="暗い"
+    IS_DARK,
+    //% block="明るい"
+    IS_BRIGHT,
+}
+
+//% weight=70 icon="\uf0c3" color=#008000 block="STEM"
 namespace stem {
     let _今まで暗い: boolean = false;
     const _暗い判定閾値: number = 8;
