@@ -9,7 +9,9 @@
     "files": [
         "README.md",
         "main.ts",
-        "uds.ts"
+        "uds.ts",
+        "ocr-05w.ts",
+        "temperature.ts"
     ],
     "testFiles": [
         "test.ts"
