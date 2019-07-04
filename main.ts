@@ -1,6 +1,11 @@
 ﻿//% weight=70 icon="\uf0c3" color=#008000 block="STEM"
 namespace stem {
-    export let 暗さ判定閾値 = 30
+    let _今まで暗い: boolean = false;
+    const _暗い判定閾値: number = 8;
+    const _明るい判定閾値: number = 15;
+    const _HYSTERESIS: number = _明るい判定閾値 - _暗い判定閾値;
+
+    export let 暗さ判定閾値 = 31
 
     //% blockId=human_detection block="人が動いた"
     export function humanDetection(): boolean {
@@ -181,16 +186,6 @@ namespace stem {
             pins.digitalWritePin(DigitalPin.P1, ビットパターン_OFF[30])
             control.waitMicros(760)
         }
-    }
-
-    //% blockId=uds block="距離"
-    export function getDistance() {
-      pins.digitalWritePin(DigitalPin.P0, 0)
-      control.waitMicros(2)
-      pins.digitalWritePin(DigitalPin.P0, 1)
-      control.waitMicros(20)
-      pins.digitalWritePin(DigitalPin.P0, 0)
-      return pins.pulseIn(DigitalPin.P1, PulseValue.High) * 153 / 29 / 2 / 100
     }
 
     //% blockId=get_temperature block="温度"
