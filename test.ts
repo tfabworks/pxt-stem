@@ -1,1 +1,8 @@
-// tests go here; this will not be compiled when this package is used as a library
+basic.forever(function () {
+    if (stem.isMove()) {
+        basic.showIcon(IconNames.Heart)
+        basic.pause(1000)
+        basic.clearScreen()
+    }
+    basic.pause(1000)
+})

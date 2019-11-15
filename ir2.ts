@@ -1,5 +1,5 @@
-﻿namespace stem {
-    const ビットパターン_ON  = [1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
+namespace stem {
+    const ビットパターン_ON = [1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0]
     const ビットパターン_OFF = [1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
     const 繰り返し回数 = 30
     const 輸送波パルス幅 = 600
@@ -10,8 +10,12 @@
         pins.analogSetPeriod(AnalogPin.P0, 輸送波周期)
     }
 
+    /**
+     * TFW-IR2で赤外線リモコンコンセントOCR-05WをONします。
+     */
     //% blockId=ir_on
-    //% block="赤外線ON"
+    //% block="IR ON"
+    //% group="IR2"
     export function IR_ON() {
         輸送波送信ポート設定()
 
@@ -81,8 +85,12 @@
         }
     }
 
+    /**
+     * TFW-IR2で赤外線リモコンコンセントOCR-05WをOFFします。
+     */
     //% blockId=ir_off
-    //% block="赤外線OFF"
+    //% block="IR OFF"
+    //% group="IR2"
     export function IR_OFF() {
         輸送波送信ポート設定()
 

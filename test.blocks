@@ -1,0 +1,69 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="device_forever" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="controls_if">
+        <value name="IF0">
+          <shadow type="logic_boolean" id="?aeby]KJ^`SEsW*E[,_5">
+            <field name="BOOL">TRUE</field>
+          </shadow>
+          <block type="is_move"></block>
+        </value>
+        <statement name="DO0">
+          <block type="basic_show_icon">
+            <field name="i">IconNames.Heart</field>
+            <next>
+              <block type="device_pause">
+                <value name="pause">
+                  <shadow type="timePicker">
+                    <field name="ms">1000</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="device_clear_display"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="device_pause">
+            <value name="pause">
+              <shadow type="timePicker">
+                <field name="ms">1000</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="is_dark" disabled="true" x="471" y="67"></block>
+  <block type="brightness_determination" disabled="true" x="368" y="186">
+    <field name="settingDarkOrBright">DarkOrBrightSpecified.IS_DARK</field>
+    <value name="lightThreshold">
+      <shadow type="math_number_minmax">
+        <mutation min="0" max="255" label="LightThreshold"></mutation>
+        <field name="SLIDER">15</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="gt_temperature_high" disabled="true" x="457" y="353">
+    <field name="settingHotOrCold">SettingHotCold.COLD</field>
+    <value name="temperatureThreshold">
+      <shadow type="math_number">
+        <field name="NUM">30</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="is_dark" disabled="true" x="406" y="404"></block>
+  <block type="is_dark" disabled="true" x="525" y="401"></block>
+  <block type="gt_temperature_high" disabled="true" x="155" y="485">
+    <field name="settingHotOrCold">SettingHotCold.HOT</field>
+    <value name="temperatureThreshold">
+      <shadow type="math_number">
+        <field name="NUM">30</field>
+      </shadow>
+    </value>
+  </block>
+</xml>
