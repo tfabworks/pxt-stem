@@ -28,7 +28,7 @@ namespace stem {
     const _HYSTERESIS: number = _明るい判定閾値 - _暗い判定閾値;
 
     /**
-     * micro:bitの明るさセンサーが暗い場合に真を返します。
+     * micro:bit本体の明るさセンサーが暗い場合（8未満）に真を返します。
      */
     //% blockId=is_dark block="is dark"
     //% group="micro:bit本体"
@@ -88,7 +88,7 @@ namespace stem {
     }
 
     /**
-     * 閾値より暗い場合に真を返します。
+     * micro:bit本体の明るさセンサーが閾値より暗い（または明るい）場合に真を返します。
      * @param lightThreshold number of brightness-threshold, eg: 15
      */
     //% blockId=brightness_determination
@@ -120,7 +120,7 @@ namespace stem {
     }
 
     /**
-     * 温度が高い場合に真を返します。
+     * micro:bit本体の温度センサーが熱い場合（30℃超）に真を返します。
      */
     //% blockId=is_temperature_high
     //% block="is hot"
@@ -133,7 +133,7 @@ namespace stem {
     }
 
     /**
-     * 閾値より温度が高い場合に真を返します。
+     * micro:bit本体の温度センサーが、閾値より熱い（または冷たい）場合に真を返します。
      * @param temperatureThreshold number of brightness-threshold, eg: 30
      */
     //% blockId=gt_temperature_high
