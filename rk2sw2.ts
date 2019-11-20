@@ -1,8 +1,21 @@
 namespace stem {
     /**
+     * micro:bit本体の明るさセンサーが暗い場合（8未満）、かつ TFW-RK2の人感センサーが反応しているとき真を返します。
+     */
+    //% blockId=is_human_detection_and_dark
+    //% block="Is Dark and Human Moving"
+    //% group="RK2"
+    export function isHumanDetectionAndDark(): boolean {
+        if ( humanDetection() && isDark() ) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
      * TFW-RK2の人感センサーが反応しているとき真を返します。
      */
-    //% blockId=human_detection block="Human is moving"
+    //% blockId=human_detection block="Is Human moving"
     //% group="RK2"
     export function humanDetection(): boolean {
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
@@ -29,5 +42,4 @@ namespace stem {
     export function turnOFF(): void {
         pins.digitalWritePin(DigitalPin.P1, 0);
     }
-
 }
