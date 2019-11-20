@@ -1,17 +1,5 @@
 namespace stem {
-    /**
-     * micro:bit本体の明るさセンサーが暗い場合（8未満）、かつ TFW-RK2の人感センサーが反応しているとき真を返します。
-     */
-    //% blockId=is_human_detection_and_dark
-    //% block="Is Dark and Human Moving"
-    //% group="RK2"
-    export function isHumanDetectionAndDark(): boolean {
-        if ( humanDetection() && isDark() ) {
-            return true;
-        }
-        return false;
-    }
-    
+  
     /**
      * TFW-RK2の人感センサーが反応しているとき真を返します。
      */
@@ -25,6 +13,19 @@ namespace stem {
         }
     }
 
+    /**
+     * micro:bit本体の明るさセンサーが暗い場合（8未満）、かつ TFW-RK2の人感センサーが反応しているとき真を返します。
+     */
+    //% blockId=is_human_detection_and_dark
+    //% block="Is Dark and Human Moving"
+    //% group="RK2"
+    export function isHumanDetectionAndDark(): boolean {
+        if ( humanDetection() && isDark() ) {
+            return true;
+        }
+        return false;
+    }
+    
     /**
      * TFW-RK2, TFW-SW2のスイッチをONします。
      */
