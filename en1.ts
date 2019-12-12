@@ -544,9 +544,8 @@ namespace BME280_I2C {
             currentSettings = ReadSettings();
             currentSettingsIsChanged = false;
 
-            // Set stats to default state.
             SetSamplingMode();
-            SetStandbyDuration();
+            SetStandbyDuration(BME280_I2C_STANDBY_DURATION.e_1_MS);
             SetIIRFilterCoefficient();
             UpdateSettings();
             SetSensorMode();
