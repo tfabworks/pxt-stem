@@ -43,6 +43,44 @@ namespace stem {
         return BME280_I2C.Pressure();
     }
 
+    /**
+     * TFW-EN1で基準面の気圧との差から高度差[m]を計算します。
+     * @param referencePressure 基準面の気圧[hPa], eg: 1013
+     * @param format number format, eg: OutputNumberFormat.INTEGER
+     */
+    //% blockId=get_altitude block="Altitude[m] Pressure at reference level%referencePressure| || %format"
+    //% group="EN1"
+    export function getAltitude(referencePressure: number = 1013, format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
+        EN1_init_if_firsttime();
+        if (format === OutputNumberFormat.INTEGER) {
+            return Math.round(calcHeight(referencePressure, BME280_I2C.Pressure(), BME280_I2C.Temperature()));
+        }
+        return calcHeight(referencePressure, BME280_I2C.Pressure(), BME280_I2C.Temperature());
+    }
+
+    function calcHeight(P0: number, P: number, T: number) {
+        let calcHeight_n = 0
+        let calcHeight_xa = 0
+        let calcHeight_fn = 0
+        let calcHeight_kn = 0
+        let calcHeight_a = 0
+        let calcHeight_x = 0
+        let calcHeight_Result = 0
+        calcHeight_x = P0 / P
+        calcHeight_a = 1 / 5.257
+        calcHeight_kn = calcHeight_a
+        calcHeight_fn = 1
+        calcHeight_xa = 1
+        for (let calcHeight_index = 0; calcHeight_index <= 4; calcHeight_index++) {
+            calcHeight_n = calcHeight_index + 1
+            calcHeight_xa = calcHeight_xa + calcHeight_kn * (calcHeight_x - 1) ** calcHeight_n / calcHeight_fn
+            calcHeight_kn = calcHeight_kn * (calcHeight_a - calcHeight_n)
+            calcHeight_fn = calcHeight_fn * (calcHeight_n + 1)
+        }
+        calcHeight_Result = (calcHeight_xa - 1) * (T + 273.15) / 0.0065;
+        return calcHeight_Result;
+    }
+    
     function EN1_init_if_firsttime(): void {
         if (EN1_init_done == false) {
             BME280_I2C.Init(BME280_I2C_ADDRESS.e_0x76);
