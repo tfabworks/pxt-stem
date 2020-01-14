@@ -10,7 +10,7 @@ namespace stem {
         // calculate distance -> median filter -> return value
         let arr: number[] = [];
         let l;
-        for(l = 0; l < 5; l++) {
+        for(l = 0; l < 3; l++) {
             let pulseWidth;
             const MAX_DIST_CM = 300;
             pins.digitalWritePin(DigitalPin.P0, 0);
@@ -38,6 +38,6 @@ namespace stem {
             arr.push(distance_cm);
         }
         arr.sort((n1, n2) => n1 - n2);
-        return arr[2];
+        return arr[1];
     }
 }
