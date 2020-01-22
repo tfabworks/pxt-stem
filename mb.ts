@@ -23,8 +23,8 @@ enum OutputNumberFormat {
 //% weight=70 icon="\uf0c3" color=#008000 block="STEM"
 namespace stem {
     let _今まで暗い: boolean = false;
-    const _暗い判定閾値: number = 10;
-    const _明るい判定閾値: number = 15;
+    const _暗い判定閾値: number = 20;
+    const _明るい判定閾値: number = 25;
     const _HYSTERESIS: number = _明るい判定閾値 - _暗い判定閾値;
 
     /**
