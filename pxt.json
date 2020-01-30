@@ -9,8 +9,7 @@
     "files": [
         "README.md",
         "mb.ts",
-        "rk2sw2.ts",
-        "sw1.ts",
+        "rk2sw2sw1.ts",
         "ds1.ts",
         "ir2.ts",
         "en1.ts",
@@ -29,6 +28,6 @@
         "test.blocks"
     ],
     "public": false,
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
     "installedVersion": "workspace:6a4b7de1-fee5-46ce-184c-7bbc11243fd9"
 }

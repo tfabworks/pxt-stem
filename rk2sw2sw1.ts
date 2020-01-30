@@ -1,5 +1,5 @@
 namespace stem {
-  
+
     /**
      * TFW-RK2の人感センサーが反応しているとき真を返します。
      */
@@ -20,12 +20,12 @@ namespace stem {
     //% block="Is Dark and Human Moving"
     //% group="RK2"
     export function isHumanDetectionAndDark(): boolean {
-        if ( humanDetection() && isDark() ) {
+        if (humanDetection() && isDark()) {
             return true;
         }
         return false;
     }
-    
+
     /**
      * TFW-RK2, TFW-SW2のスイッチをONします。
      */
@@ -42,5 +42,17 @@ namespace stem {
     //% group="RK2, SW2"
     export function turnOFF(): void {
         pins.digitalWritePin(DigitalPin.P1, 0);
+    }
+
+    /**
+     * TFW-SW1で出力をコントロールします。
+     * @param duty set the duty-ratio, eg: 100
+     */
+    //% blockId=sw1_out
+    //% block="Output %duty\\%"
+    //% duty.min=0 duty.max=100
+    //% group="SW1"
+    export function sw1_out(duty: number): void {
+        pins.analogWritePin(AnalogPin.P0, (duty / 100 * 1023));
     }
 }
