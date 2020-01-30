@@ -1,14 +1,24 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <variables></variables>
+  <variables>
+    <variable type="" id="Z?SGnZcTsQCoU%_jHnGS">aaa</variable>
+    <variable type="" id="R[47z/dL];JTw^6j3%#]">変数</variable>
+  </variables>
   <block type="device_forever" x="0" y="0">
     <statement name="HANDLER">
-      <block type="sw1_out">
-        <value name="duty">
-          <shadow type="math_number_minmax">
-            <mutation min="0" max="100" label="Duty"></mutation>
-            <field name="SLIDER">100</field>
+      <block type="controls_if">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <shadow type="logic_boolean" id="Je[r/a$Ijwk8(juDzD(^">
+            <field name="BOOL">TRUE</field>
           </shadow>
+          <block type="is_dark"></block>
         </value>
+        <statement name="DO0">
+          <block type="turn_on"></block>
+        </statement>
+        <statement name="ELSE">
+          <block type="turn_off"></block>
+        </statement>
       </block>
     </statement>
   </block>

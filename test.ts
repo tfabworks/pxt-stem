@@ -1,3 +1,7 @@
 basic.forever(function () {
-    stem.sw1_out(100)
+    if (stem.isDark()) {
+        stem.turnON()
+    } else {
+        stem.turnOFF()
+    }
 })

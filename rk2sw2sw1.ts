@@ -27,21 +27,31 @@ namespace stem {
     }
 
     /**
-     * TFW-RK2, TFW-SW2のスイッチをONします。
+     * TFW-RK2, TFW-SW2, TFW-SW1 のスイッチをONします。
      */
     //% blockId=turn_on block="Switch Turn ON"
-    //% group="RK2, SW2"
+    //% group="RK2, SW2, SW1"
     export function turnON(): void {
-        pins.digitalWritePin(DigitalPin.P1, 1);
+        if (pins.analogReadPin(AnalogPin.P1) < 25) {
+            pins.digitalWritePin(DigitalPin.P1, 1);
+        }
+        else {
+            pins.digitalWritePin(DigitalPin.P0, 1)
+        }
     }
 
     /**
-     * TFW-RK2, TFW-SW2のスイッチをOFFします。
+     * TFW-RK2, TFW-SW2, TFW-SW1 のスイッチをOFFします。
      */
     //% blockId=turn_off block="Switch Turn OFF"
-    //% group="RK2, SW2"
+    //% group="RK2, SW2, SW1"
     export function turnOFF(): void {
-        pins.digitalWritePin(DigitalPin.P1, 0);
+        if (pins.analogReadPin(AnalogPin.P1) < 25) {
+            pins.digitalWritePin(DigitalPin.P1, 0);
+        }
+        else {
+            pins.digitalWritePin(DigitalPin.P0, 0)
+        }
     }
 
     /**
