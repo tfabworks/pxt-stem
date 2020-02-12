@@ -14,6 +14,8 @@
         "ir2.ts",
         "en1.ts",
         "tp2.ts",
+        "kr1.ts",
+        "kr1.cpp",
         "ds1820-pxt.ts",
         "ds1820-pxt.cpp",
         "source/DS1820.cpp",
@@ -21,6 +23,7 @@
         "source/LinkedList.cpp",
         "source/LinkedList.h",
         "enums.d.ts",
+        "shims.d.ts",
         "_locales/ja/stem-strings.json"
     ],
     "testFiles": [
