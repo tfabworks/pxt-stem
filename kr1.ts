@@ -37,7 +37,7 @@ namespace stem {
      */
     //% blockId=kr1servoSetPulseWidth
     // block="set %KR1_SERVO_PORT pulse width %usec=protractorPicker °"
-    //% block="サーボ %KR1_SERVO_PORT パルス幅 %usec|(マイクロ秒)"
+    //% block="サーボ %KR1_SERVO_PORT パルス幅 %usec|マイクロ秒"
     //% usec.min=500 usec.max=2500
     //% usec.defl=1500
     //% group="KR1"
