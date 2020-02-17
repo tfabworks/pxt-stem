@@ -28,7 +28,7 @@ namespace stem {
     const _HYSTERESIS: number = _明るい判定閾値 - _暗い判定閾値;
 
     /**
-     * micro:bit本体の明るさセンサーが暗い場合（8未満）に真を返します。
+     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
      */
     //% blockId=is_dark block="is dark"
     //% group="micro:bit本体"
