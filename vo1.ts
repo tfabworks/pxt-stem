@@ -1,13 +1,16 @@
 // "こんにちは"としゃべる
 // RX P14, TX P13
 namespace stem {
+    let VO1_init_done = false;
+
     /**
      * VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。
      */
     //% blockId=vo1_send
-    //% block=%command|としゃべる"
+    //% block=%command|としゃべる
     //% group="VO1"
     export function VO1_send (command: string) {
+        VO1_init_if_firsttime();
         command = "" + command + '\r'
         while (VO1_checkBusy()) {
             ;
@@ -68,5 +71,12 @@ namespace stem {
             )
             basic.pause(100);
             VO1_checkBusy(); // clear readbuffer
+    }
+
+    function VO1_init_if_firsttime(): void {
+        if ( VO1_init_done == false ) {
+            VO1_init();
+            VO1_init_done = true;
+        }
     }
 }
