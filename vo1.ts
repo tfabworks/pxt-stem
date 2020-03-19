@@ -5,6 +5,7 @@ namespace stem {
 
     /**
      * VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。
+     * @param command string of command, eg: konnitiwa
      */
     //% blockId=vo1_send
     //% block=%command|としゃべる
