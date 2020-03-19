@@ -16,6 +16,7 @@
         "tp2.ts",
         "kr1.ts",
         "kr1.cpp",
+        "vo1.ts",
         "ds1820-pxt.ts",
         "ds1820-pxt.cpp",
         "source/DS1820.cpp",
@@ -31,6 +32,6 @@
         "test.blocks"
     ],
     "public": false,
-    "preferredEditor": "blocksprj",
+    "preferredEditor": "tsprj",
     "installedVersion": "workspace:6a4b7de1-fee5-46ce-184c-7bbc11243fd9"
 }
