@@ -4,7 +4,7 @@ namespace stem {
     let VO1_init_done = false;
 
     /**
-     * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。
+     * TFW-VO1にローマ字を日本語で発声させます。エラーの場合はエラーコードを発声します。「シリアル通信」や「コンソールを表示」との同時使用はできません。
      * @param command string of command, eg: konnitiwa
      */
     //% blockId=vo1_send

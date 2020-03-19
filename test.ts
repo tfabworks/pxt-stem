@@ -1,7 +1,7 @@
 basic.forever(function () {
-    if (stem.MS1_magnetDetect()) {
-        basic.showIcon(IconNames.Heart)
-    } else {
-        basic.showIcon(IconNames.Yes)
-    }
+    led.plotBarGraph(
+    input.lightLevel(),
+    0
+    )
+    stem.VO1_send("konnitiwa")
 })

@@ -33,6 +33,6 @@
         "test.blocks"
     ],
     "public": false,
-    "preferredEditor": "blocksprj",
+    "preferredEditor": "tsprj",
     "installedVersion": "workspace:6a4b7de1-fee5-46ce-184c-7bbc11243fd9"
 }
