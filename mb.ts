@@ -88,7 +88,7 @@ namespace stem {
     }
 
     /**
-     * micro:bit本体の明るさセンサーが閾値より暗い（または明るい）場合に真を返します。
+     * micro:bit本体の明るさセンサーがしきい値より暗い（または明るい）場合に真を返します。
      * @param lightThreshold number of brightness-threshold, eg: 15
      */
     //% blockId=brightness_determination
@@ -133,7 +133,7 @@ namespace stem {
     }
 
     /**
-     * micro:bit本体の温度センサーが、閾値より熱い（または冷たい）場合に真を返します。
+     * micro:bit本体の温度センサーが、しきい値より熱い（または冷たい）場合に真を返します。
      * @param temperatureThreshold number of brightness-threshold, eg: 30
      */
     //% blockId=gt_temperature_high
