@@ -171,7 +171,6 @@ namespace stem {
     //% block="micro:bit is moving"
     //% group="micro:bit本体"
     //% weight=60
-    export function gtTemperatureHigh(temperatureThreshold: number, settingHotCold: SettingHotCold): boolean {
     export function isMove(): boolean {
         if (is_acc_first_time) {
             acceleration = input.acceleration(Dimension.Strength)
