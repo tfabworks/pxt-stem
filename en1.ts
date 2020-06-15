@@ -7,6 +7,7 @@ namespace stem {
      */
     //% blockId=get_temperature block="Temperature[degC] (EN1) || %format"
     //% group="EN1"
+    //% weight=100
     export function getTemperature(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
         EN1_init_if_firsttime();
         if (format === OutputNumberFormat.INTEGER) {
@@ -21,6 +22,7 @@ namespace stem {
      */
     //% blockId=get_humidity block="Humidity[\\%] || %format"
     //% group="EN1"
+    //% weight=90
     export function getHumidity(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
         EN1_init_if_firsttime();
         if (format === OutputNumberFormat.INTEGER) {
@@ -35,6 +37,7 @@ namespace stem {
      */
     //% blockId=get_pressure block="Pressure[hPa] || %format"
     //% group="EN1"
+    //% weight=80
     export function getPressure(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
         EN1_init_if_firsttime();
         if (format === OutputNumberFormat.INTEGER) {
@@ -50,6 +53,7 @@ namespace stem {
      */
     //% blockId=get_altitude block="Altitude[m] Pressure at reference level%referencePressure| || %format"
     //% group="EN1"
+    //% weight=70
     export function getAltitude(referencePressure: number = 1013, format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
         EN1_init_if_firsttime();
         if (format === OutputNumberFormat.INTEGER) {

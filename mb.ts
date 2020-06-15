@@ -32,6 +32,7 @@ namespace stem {
      */
     //% blockId=is_dark block="is dark"
     //% group="micro:bit本体"
+    //% weight=100
     export function isDark(): boolean {
         return _isDark(_暗い判定閾値, _明るい判定閾値);
 
@@ -95,6 +96,7 @@ namespace stem {
     //% block="Than %lightThreshold, %settingDarkOrBright"
     //% lightThreshold.min=0 lightThreshold.max=255
     //% group="micro:bit本体"
+    //% weight=90
     export function brightnessDetermination(lightThreshold: number, settingDarkOrBright: DarkOrBrightSpecified): boolean {
         if (_HYSTERESIS < 0) { control.assert(false); }
         if (lightThreshold < 0) {
@@ -125,6 +127,7 @@ namespace stem {
     //% blockId=is_temperature_high
     //% block="is hot"
     //% group="micro:bit本体"
+    //% weight=80
     export function isTemperatureHigh(): boolean {
         if (input.temperature() > 30) {
             return true;
@@ -139,6 +142,7 @@ namespace stem {
     //% blockId=gt_temperature_high
     //% block="Than %temperatureThreshold|degC, %settingHotOrCold"
     //% group="micro:bit本体"
+    //% weight=70
     export function gtTemperatureHigh(temperatureThreshold: number, settingHotCold: SettingHotCold): boolean {
         if (settingHotCold === SettingHotCold.HOT) {
             if (input.temperature() > temperatureThreshold) {
@@ -166,6 +170,8 @@ namespace stem {
     //% blockId=is_move
     //% block="micro:bit is moving"
     //% group="micro:bit本体"
+    //% weight=60
+    export function gtTemperatureHigh(temperatureThreshold: number, settingHotCold: SettingHotCold): boolean {
     export function isMove(): boolean {
         if (is_acc_first_time) {
             acceleration = input.acceleration(Dimension.Strength)

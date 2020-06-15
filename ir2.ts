@@ -16,6 +16,7 @@ namespace stem {
     //% blockId=ir_on
     //% block="IR ON"
     //% group="IR2"
+    //% weight=100
     export function IR_ON() {
         輸送波送信ポート設定()
 
@@ -91,6 +92,7 @@ namespace stem {
     //% blockId=ir_off
     //% block="IR OFF"
     //% group="IR2"
+    //% weight=90
     export function IR_OFF() {
         輸送波送信ポート設定()
 

@@ -6,6 +6,7 @@ namespace stem {
     //% blockId=uds
     //% block="Distance[cm] || %format"
     //% group="DS1"
+    //% weight=100
     export function getDistance(format:OutputNumberFormat = OutputNumberFormat.INTEGER):number {
         // calculate distance -> median filter -> return value
         let arr: number[] = [];

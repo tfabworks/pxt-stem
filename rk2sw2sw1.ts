@@ -5,6 +5,7 @@ namespace stem {
      */
     //% blockId=human_detection block="Is Human moving"
     //% group="RK2"
+    //% weight=100
     export function humanDetection(): boolean {
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
             return true;
@@ -19,6 +20,7 @@ namespace stem {
     //% blockId=is_human_detection_and_dark
     //% block="Is Dark and Human Moving"
     //% group="RK2"
+    //% weight=90
     export function isHumanDetectionAndDark(): boolean {
         if (humanDetection() && isDark()) {
             return true;
@@ -31,6 +33,7 @@ namespace stem {
      */
     //% blockId=turn_on block="Switch Turn ON"
     //% group="RK2, SW2, SW1"
+    //% weight=80
     export function turnON(): void {
         if (pins.analogReadPin(AnalogPin.P1) < 25) {
             pins.digitalWritePin(DigitalPin.P1, 1);
@@ -45,6 +48,7 @@ namespace stem {
      */
     //% blockId=turn_off block="Switch Turn OFF"
     //% group="RK2, SW2, SW1"
+    //% weight=70
     export function turnOFF(): void {
         if (pins.analogReadPin(AnalogPin.P1) < 25) {
             pins.digitalWritePin(DigitalPin.P1, 0);
@@ -62,6 +66,7 @@ namespace stem {
     //% block="Output %duty\\%"
     //% duty.min=0 duty.max=100
     //% group="SW1"
+    //% weight=60
     export function sw1_out(duty: number): void {
         pins.analogWritePin(AnalogPin.P0, (duty / 100 * 1023));
     }

@@ -10,6 +10,7 @@ namespace stem {
     //% blockId=vo1_send
     //% block=%command|としゃべる
     //% group="VO1"
+    //% weight=100
     export function VO1_send (command: string) {
         VO1_init_if_firsttime();
         command = "" + command + '\r'
