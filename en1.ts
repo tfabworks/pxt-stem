@@ -294,7 +294,7 @@ namespace BME280_I2C {
         var2 = (((var2 * var2) / 4096) * dig_T3) / 16384;
 
         current_t_fine = var1 + var2;
-        temperature = ((current_t_fine) * 5 + 128) / 256;
+        temperature = ((current_t_fine) * 5 + 128) / 256.0;
 
         if (temperature < temperature_min) {
             temperature = temperature_min;
@@ -338,7 +338,7 @@ namespace BME280_I2C {
 
             var1 = (dig_P9 * (((pressure / 8) * (pressure / 8)) / 8192)) / 4096;
             var2 = ((pressure / 4) * dig_P8) / 8192;
-            pressure = pressure + (var1 + var2 + dig_P7) / 16;
+            pressure = pressure + (var1 + var2 + dig_P7) / 16.0;
 
             if (pressure < pressure_min) {
                 pressure = pressure_min;
@@ -376,7 +376,7 @@ namespace BME280_I2C {
         var5 = var3 - ((var4 * dig_H1) / 16);
         var5 = Math.max(var5, 0);
         var5 = Math.min(var5, 419430400);
-        humidity = var5 / 4096;
+        humidity = var5 / 4096.0;
 
         currentCompensatedData.humidity = humidity;
     }
@@ -563,21 +563,21 @@ namespace BME280_I2C {
         if (IsUpdateNeeded()) {
             ReadSensorData();
         }
-        return (currentCompensatedData.temperature + 50) / 100;
+        return (currentCompensatedData.temperature) / 100.0;
     }
 
     export function Pressure(): number {
         if (IsUpdateNeeded()) {
             ReadSensorData();
         }
-        return (currentCompensatedData.pressure + 50) / 100;
+        return (currentCompensatedData.pressure) / 100.0;
     }
 
     export function Humidity(): number {
         if (IsUpdateNeeded()) {
             ReadSensorData();
         }
-        return (currentCompensatedData.humidity + 512) / 1024;
+        return (currentCompensatedData.humidity) / 1024.0;
     }
 }
 
