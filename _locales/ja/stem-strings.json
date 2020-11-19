@@ -21,6 +21,5 @@
     "stem.turnON|block": "スイッチON",
     "stem.turnOFF|block": "スイッチOFF",
     "stem.sw1_out|block": "出力を%duty|\\%にする",
-    "stem.TP2_getTemperature|block": "温度[℃] (TP2)",
     "stem.getAltitude|block": "高度差[m] 基準圧%referencePressure"
 }

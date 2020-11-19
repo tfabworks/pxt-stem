@@ -19,7 +19,7 @@ enum OutputNumberFormat {
     FLOAT = 1
 }
 
-//% groups='["micro:bit本体", "RK2", "RK2, SW2, SW1", "SW1", "DS1", "IR2", "EN1", "TP2", "KR1", "MS1", "VO1"]'
+//% groups='["micro:bit本体", "RK2", "RK2, SW2, SW1", "SW1", "DS1", "IR2", "EN1", "MS1", "VO1"]'
 //% weight=70 icon="\uf0c3" color=#008000 block="STEM"
 namespace stem {
     let _今まで暗い: boolean = false;
@@ -185,4 +185,17 @@ namespace stem {
         }
         return false;
     }
+
+    /**
+     * 指定された秒数の間、一時停止します。
+     * @param sec 秒, eg: 1
+     */
+    //% blockId=pause_sec
+    //% block="一時停止（秒）%sec"
+    //% group="micro:bit本体"
+    //% weight=30
+    export function pause_sec(sec: number) {
+        basic.pause(1000 * sec);
+    }
+
 }
