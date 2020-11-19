@@ -15,7 +15,6 @@
         "vo1.ts",
         "ms1.ts",
         "sl1.ts",
-        "shims.d.ts",
         "_locales/ja/stem-strings.json"
     ],
     "testFiles": [
