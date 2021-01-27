@@ -35,12 +35,8 @@ namespace stem {
     //% group="RK2, SW2, SW1"
     //% weight=80
     export function turnON(): void {
-        if (pins.analogReadPin(AnalogPin.P1) < 25) {
-            pins.digitalWritePin(DigitalPin.P1, 1);
-        }
-        else {
-            pins.digitalWritePin(DigitalPin.P0, 1)
-        }
+        pins.digitalWritePin(DigitalPin.P1, 1);
+        pins.digitalWritePin(DigitalPin.P0, 1)
     }
 
     /**
@@ -50,12 +46,8 @@ namespace stem {
     //% group="RK2, SW2, SW1"
     //% weight=70
     export function turnOFF(): void {
-        if (pins.analogReadPin(AnalogPin.P1) < 25) {
-            pins.digitalWritePin(DigitalPin.P1, 0);
-        }
-        else {
-            pins.digitalWritePin(DigitalPin.P0, 0)
-        }
+        pins.digitalWritePin(DigitalPin.P1, 0);
+        pins.digitalWritePin(DigitalPin.P0, 0)
     }
 
     /**
