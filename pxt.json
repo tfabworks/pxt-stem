@@ -15,6 +15,9 @@
         "vo1.ts",
         "ms1.ts",
         "sl1.ts",
+        "tp2.ts",
+        "ds18b20/ds18b20.ts",
+        "ds18b20/ds18b20.cpp",
         "_locales/ja/stem-strings.json"
     ],
     "testFiles": [
@@ -22,6 +25,6 @@
         "test.blocks"
     ],
     "public": false,
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
     "installedVersion": "workspace:6a4b7de1-fee5-46ce-184c-7bbc11243fd9"
 }

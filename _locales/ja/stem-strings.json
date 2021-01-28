@@ -11,6 +11,7 @@
     "stem.gtTemperatureHigh|block": "%temperatureThreshold|℃より%settingHotOrCold|",
     "stem.isMove|block": "micro:bitが動いた",
     "stem.getDistance|block": "距離[cm]",
+    "stem.TP2_getTemperature|block": "温度[℃] (TP2)",
     "stem.getTemperature|block": "温度[℃] (EN1)",
     "stem.getHumidity|block": "湿度[\\%]",
     "stem.getPressure|block": "気圧[hPa]",

@@ -1,3 +1,3 @@
 basic.forever(function () {
-    serial.writeLine("" + (stem.SL1_sound_pressure()))
+    basic.showString("" + (stem.TP2_getTemperature(OutputNumberFormat.FLOAT)))
 })
