@@ -1,8 +1,8 @@
 {
     "DarkOrBrightSpecified.IS_BRIGHT|block": "明るい",
     "DarkOrBrightSpecified.IS_DARK|block": "暗い",
-    "SettingHotCold.HOT|block": "熱い",
-    "SettingHotCold.COLD|block": "冷たい",
+    "SettingHotCold.HOT|block": "高い",
+    "SettingHotCold.COLD|block": "低い",
     "stem.isDark|block": "暗い",
     "OutputNumberFormat.INTEGER|block":"整数",
     "OutputNumberFormat.FLOAT|block": "小数",        
