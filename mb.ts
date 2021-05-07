@@ -136,7 +136,7 @@ namespace stem {
     }
 
     /**
-     * micro:bit本体の温度センサーが、しきい値より熱い（または冷たい）場合に真を返します。
+     * micro:bit本体の温度センサーの値が、しきい値より高い（または低い）場合に真を返します。
      * @param temperatureThreshold number of brightness-threshold, eg: 30
      */
     //% blockId=gt_temperature_high
