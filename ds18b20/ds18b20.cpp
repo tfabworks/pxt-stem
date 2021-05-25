@@ -172,7 +172,7 @@ class microbitp : public MicroBitComponent
         int16_t temp = (b2 << 8 | b1);
         if ( crc8(data, 8) != data[8] ) {
             if ( --retry <= 0 ) {
-                retry = RETRY_NUMBER;
+                retry = 0;
                 return -10000;
             }
             return Temperature();
