@@ -134,8 +134,25 @@ class microbitp : public MicroBitComponent
         return byte;
     }
 
+    uint8_t crc8( uint8_t *addr, uint8_t len)
+    {
+        uint8_t crc = 0;
+        while (len--) {
+            uint8_t inbyte = *addr++;
+            for (uint8_t i = 8; i; i--) {
+                uint8_t mix = (crc ^ inbyte) & 0x01;
+                crc >>= 1;
+                if (mix) crc ^= 0x8C;
+                inbyte >>= 1;
+            }
+        }
+        return crc;
+    }
+
+#define RETRY_NUMBER 4
     //%
     int16_t Temperature() {
+        static int retry = RETRY_NUMBER;
         pin = pin0;
         init();
         writeByte(0xCC);
@@ -143,10 +160,24 @@ class microbitp : public MicroBitComponent
         init();
         writeByte(0xCC);
         writeByte(0xBE);
-        int b1 = readByte();
-        int b2 = readByte();
+
+        uint8_t data[9];
+        for(int i=0; i<9; i++) {
+            data[i] = readByte();
+        }
+
+        int b1 = data[0];
+        int b2 = data[1];
         pin.deletep();
         int16_t temp = (b2 << 8 | b1);
+        if ( crc8(data, 8) != data[8] ) {
+            if ( --retry <= 0 ) {
+                retry = RETRY_NUMBER;
+                return -10000;
+            }
+            return Temperature();
+        }
+        retry = RETRY_NUMBER;
         return temp * 100 / 16;
     }
 }
