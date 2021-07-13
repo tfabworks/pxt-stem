@@ -5,7 +5,7 @@ namespace stem {
      * TFW-EN1で温度[℃]を測定します。
      * @param format number format, eg: OutputNumberFormat.INTEGER
      */
-    //% blockId=get_temperature block="Temperature[degC] (EN1) || %format"
+    //% blockId=get_temperature block="温度[℃] (EN1) || %format"
     //% group="EN1"
     //% weight=100
     export function getTemperature(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
@@ -20,7 +20,7 @@ namespace stem {
      * TFW-EN1で湿度[%]を測定します。
      * @param format number format, eg: OutputNumberFormat.INTEGER
      */
-    //% blockId=get_humidity block="Humidity[\\%] || %format"
+    //% blockId=get_humidity block="湿度[\\%] || %format"
     //% group="EN1"
     //% weight=90
     export function getHumidity(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
@@ -35,7 +35,7 @@ namespace stem {
      * TFW-EN1で気圧[hPa]を測定します。
      * @param format number format, eg: OutputNumberFormat.INTEGER
      */
-    //% blockId=get_pressure block="Pressure[hPa] || %format"
+    //% blockId=get_pressure block="気圧[hPa] || %format"
     //% group="EN1"
     //% weight=80
     export function getPressure(format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {
@@ -51,7 +51,7 @@ namespace stem {
      * @param referencePressure 基準面の気圧[hPa], eg: 1013
      * @param format number format, eg: OutputNumberFormat.INTEGER
      */
-    //% blockId=get_altitude block="Altitude[m] Pressure at reference level%referencePressure| || %format"
+    //% blockId=get_altitude block="高度差[m] 基準圧%referencePressure || %format"
     //% group="EN1"
     //% weight=70
     export function getAltitude(referencePressure: number = 1013, format: OutputNumberFormat = OutputNumberFormat.INTEGER): number {

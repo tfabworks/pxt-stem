@@ -1,21 +1,21 @@
 enum DarkOrBrightSpecified {
-    //% block="DARK"
+    //% block="暗い"
     IS_DARK,
-    //% block="BRIGHT"
+    //% block="明るい"
     IS_BRIGHT,
 }
 
 enum SettingHotCold {
-    //% block="HOT"
+    //% block="高い"
     HOT,
-    //% block="COLD"
+    //% block="低い"
     COLD,
 }
 
 enum OutputNumberFormat {
-    //% block="INTEGER"
+    //% block="整数"
     INTEGER = 0,
-    //% block="FLOAT"
+    //% block="小数"
     FLOAT = 1
 }
 
@@ -30,7 +30,7 @@ namespace stem {
     /**
      * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
      */
-    //% blockId=is_dark block="is dark"
+    //% blockId=is_dark block="暗い"
     //% group="micro:bit本体"
     //% weight=100
     export function isDark(): boolean {
@@ -93,7 +93,7 @@ namespace stem {
      * @param lightThreshold number of brightness-threshold, eg: 15
      */
     //% blockId=brightness_determination
-    //% block="Than %lightThreshold, %settingDarkOrBright"
+    //% block="%lightThreshold|より%settingDarkOrBright|"
     //% lightThreshold.min=0 lightThreshold.max=255
     //% group="micro:bit本体"
     //% weight=90
@@ -125,7 +125,7 @@ namespace stem {
      * micro:bit本体の温度センサーが熱い場合（30℃超）に真を返します。
      */
     //% blockId=is_temperature_high
-    //% block="is hot"
+    //% block="暑い"
     //% group="micro:bit本体"
     //% weight=80
     export function isTemperatureHigh(): boolean {
@@ -140,7 +140,7 @@ namespace stem {
      * @param temperatureThreshold number of brightness-threshold, eg: 30
      */
     //% blockId=gt_temperature_high
-    //% block="Than %temperatureThreshold|degC, %settingHotOrCold"
+    //% block="%temperatureThreshold|℃より%settingHotOrCold|"
     //% group="micro:bit本体"
     //% weight=70
     export function gtTemperatureHigh(temperatureThreshold: number, settingHotCold: SettingHotCold): boolean {
@@ -168,7 +168,7 @@ namespace stem {
      * micro:bit本体が揺り動かされた場合に真を返します。
      */
     //% blockId=is_move
-    //% block="micro:bit is moving"
+    //% block="micro:bitが動いた"
     //% group="micro:bit本体"
     //% weight=60
     export function isMove(): boolean {

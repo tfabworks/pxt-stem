@@ -3,7 +3,7 @@ namespace stem {
     /**
      * TFW-RK2の人感センサーが反応しているとき真を返します。
      */
-    //% blockId=human_detection block="Is Human moving"
+    //% blockId=human_detection block="人が動いた"
     //% group="RK2"
     //% weight=100
     export function humanDetection(): boolean {
@@ -18,7 +18,7 @@ namespace stem {
      * micro:bit本体の明るさセンサーが暗い場合（20未満）、かつ TFW-RK2の人感センサーが反応しているとき真を返します。
      */
     //% blockId=is_human_detection_and_dark
-    //% block="Is Dark and Human Moving"
+    //% block="暗いときに人が動いた"
     //% group="RK2"
     //% weight=90
     export function isHumanDetectionAndDark(): boolean {
@@ -34,6 +34,7 @@ namespace stem {
     //% blockId=turn_on block="Switch Turn ON"
     //% group="RK2, SW2, SW1"
     //% weight=80
+	//% block="スイッチON"
     export function turnON(): void {
         pins.digitalWritePin(DigitalPin.P1, 1);
         pins.digitalWritePin(DigitalPin.P0, 1)
@@ -45,6 +46,7 @@ namespace stem {
     //% blockId=turn_off block="Switch Turn OFF"
     //% group="RK2, SW2, SW1"
     //% weight=70
+    //% block="スイッチOFF"
     export function turnOFF(): void {
         pins.digitalWritePin(DigitalPin.P1, 0);
         pins.digitalWritePin(DigitalPin.P0, 0)
@@ -55,7 +57,7 @@ namespace stem {
      * @param duty set the duty-ratio, eg: 100
      */
     //% blockId=sw1_out
-    //% block="Output %duty\\%"
+    //% block="出力を%duty|\\%にする"
     //% duty.min=0 duty.max=100
     //% group="SW1"
     //% weight=60

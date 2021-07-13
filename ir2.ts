@@ -14,7 +14,7 @@ namespace stem {
      * TFW-IR2で赤外線リモコンコンセントOCR-05WをONします。
      */
     //% blockId=ir_on
-    //% block="IR ON"
+    //% block="赤外線ON"
     //% group="IR2"
     //% weight=100
     export function IR_ON() {
@@ -90,7 +90,7 @@ namespace stem {
      * TFW-IR2で赤外線リモコンコンセントOCR-05WをOFFします。
      */
     //% blockId=ir_off
-    //% block="IR OFF"
+    //% block="赤外線OFF"
     //% group="IR2"
     //% weight=90
     export function IR_OFF() {
