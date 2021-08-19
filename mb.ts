@@ -27,16 +27,7 @@ namespace stem {
     const _明るい判定閾値: number = 25;
     const _HYSTERESIS: number = _明るい判定閾値 - _暗い判定閾値;
 
-    /**
-     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
-     */
-    //% blockId=is_dark block="暗い"
-    //% group="micro:bit本体"
-    //% weight=100
-    export function isDark(): boolean {
-        return _isDark(_暗い判定閾値, _明るい判定閾値);
 
-    }
 
     /* 明るさの平均を取る */
     function _lightLevelSampling(): number {
@@ -96,7 +87,7 @@ namespace stem {
     //% block="%lightThreshold|より%settingDarkOrBright|"
     //% lightThreshold.min=0 lightThreshold.max=255
     //% group="micro:bit本体"
-    //% weight=90
+    //% weight=100
     export function brightnessDetermination(lightThreshold: number, settingDarkOrBright: DarkOrBrightSpecified): boolean {
         if (_HYSTERESIS < 0) { control.assert(false); }
         if (lightThreshold < 0) {
@@ -120,7 +111,18 @@ namespace stem {
         }
         control.assert(false); return false;
     }
+    
+    /**
+     * micro:bit本体の明るさセンサーが暗い場合（20未満）に真を返します。
+     */
+    //% blockId=is_dark block="暗い"
+    //% group="micro:bit本体"
+    //% weight=90
+    export function isDark(): boolean {
+        return _isDark(_暗い判定閾値, _明るい判定閾値);
 
+    }
+    
     /**
      * micro:bit本体の温度センサーが熱い場合（30℃超）に真を返します。
      */
