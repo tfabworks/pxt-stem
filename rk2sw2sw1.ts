@@ -52,7 +52,7 @@ namespace stem {
     //% blockId=turn_on block="Switch Turn ON"
     //% group="RK2, SW2, SW1"
     //% weight=80
-	//% block="スイッチON"
+	//% block="制御スイッチON"
     export function turnON(): void {
         pins.digitalWritePin(DigitalPin.P1, 1);
         pins.digitalWritePin(DigitalPin.P0, 1)
@@ -64,7 +64,7 @@ namespace stem {
     //% blockId=turn_off block="Switch Turn OFF"
     //% group="RK2, SW2, SW1"
     //% weight=70
-    //% block="スイッチOFF"
+    //% block="制御スイッチOFF"
     export function turnOFF(): void {
         pins.digitalWritePin(DigitalPin.P1, 0);
         pins.digitalWritePin(DigitalPin.P0, 0)
