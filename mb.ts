@@ -123,19 +123,7 @@ namespace stem {
 
     }
     
-    /**
-     * micro:bit本体の温度センサーが熱い場合（30℃超）に真を返します。
-     */
-    //% blockId=is_temperature_high
-    //% block="暑い"
-    //% group="micro:bit本体"
-    //% weight=80
-    export function isTemperatureHigh(): boolean {
-        if (input.temperature() > 30) {
-            return true;
-        }
-        return false;
-    }
+
 
     /**
      * micro:bit本体の温度センサーの値が、しきい値より高い（または低い）場合に真を返します。
@@ -144,7 +132,7 @@ namespace stem {
     //% blockId=gt_temperature_high
     //% block="%temperatureThreshold|℃より%settingHotOrCold|"
     //% group="micro:bit本体"
-    //% weight=70
+    //% weight=80
     export function gtTemperatureHigh(temperatureThreshold: number, settingHotCold: SettingHotCold): boolean {
         if (settingHotCold === SettingHotCold.HOT) {
             if (input.temperature() > temperatureThreshold) {
@@ -161,6 +149,20 @@ namespace stem {
         return false;
     }
 
+    /**
+     * micro:bit本体の温度センサーが熱い場合（30℃超）に真を返します。
+     */
+    //% blockId=is_temperature_high
+    //% block="暑い"
+    //% group="micro:bit本体"
+    //% weight=70
+    export function isTemperatureHigh(): boolean {
+        if (input.temperature() > 30) {
+            return true;
+        }
+        return false;
+    }
+    
     let is_acc_first_time: boolean = true;
     let prev_accelaration: number;
     let acceleration: number;
