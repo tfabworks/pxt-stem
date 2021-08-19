@@ -13,9 +13,25 @@ namespace stem {
             return false;
         }
     }
-
+	
+   /**
+     * micro:bit本体の明るさセンサーが、しきい値より暗い、かつ TFW-RK2などのボードの人感センサーが反応しているとき真を返します。
+     * @param lightThreshold number of brightness - threshold, eg: 15
+     */
+    //% block="%lightThreshold|より暗いときに人が動いた"
+    //% group="S-M1"
+    //% blockId=isHumanDetectionAndDark
+    //% lightThreshold.min=0 lightThreshold.max=255
+    //% weight=95
+    export function isHumanDetectionAndDark(lightThreshold:number): boolean {
+        if (humanDetection() && brightnessDetermination(lightThreshold, DarkOrBrightSpecified_s.IS_DARK ) ) {
+            return true;
+        }
+        return false;
+    }
+	
     /**
-     * micro:bit本体の明るさセンサーが暗い場合（20未満）、かつ TFW-RK2の人感センサーが反応しているとき真を返します。
+     * micro:bit本体の明るさセンサーが暗い場合（20未満）、かつ TFW-RK2などのボードの人感センサーが反応しているとき真を返します。
      */
     //% blockId=is_human_detection_and_dark
     //% block="暗いときに人が動いた"
@@ -27,6 +43,8 @@ namespace stem {
         }
         return false;
     }
+
+
 
     /**
      * TFW-RK2, TFW-SW2, TFW-SW1 のスイッチをONします。
