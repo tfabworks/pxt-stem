@@ -19,12 +19,12 @@ namespace stem {
      * @param lightThreshold number of brightness - threshold, eg: 15
      */
     //% block="%lightThreshold|より暗いときに人が動いた"
-    //% group="S-M1"
-    //% blockId=isHumanDetectionAndDark
+    //% group="RK2"
+    //% blockId=isHumanDetectionAndDarkWithThreshold
     //% lightThreshold.min=0 lightThreshold.max=255
     //% weight=95
-    export function isHumanDetectionAndDark(lightThreshold:number): boolean {
-        if (humanDetection() && brightnessDetermination(lightThreshold, DarkOrBrightSpecified_s.IS_DARK ) ) {
+    export function isHumanDetectionAndDarkWithThreshold(lightThreshold:number): boolean {
+        if (humanDetection() && brightnessDetermination(lightThreshold, DarkOrBrightSpecified.IS_DARK ) ) {
             return true;
         }
         return false;
