@@ -19,8 +19,8 @@
     "stem.IR_OFF|block": "赤外線OFF",
     "stem.humanDetection|block": "人が動いた",
     "stem.isHumanDetectionAndDark|block": "暗いときに人が動いた",
-    "stem.turnON|block": "スイッチON",
-    "stem.turnOFF|block": "スイッチOFF",
+    "stem.turnON|block": "制御スイッチON",
+    "stem.turnOFF|block": "制御スイッチOFF",
     "stem.sw1_out|block": "出力を%duty|\\%にする",
     "stem.getAltitude|block": "高度差[m] 基準圧%referencePressure"
 }
