@@ -5,6 +5,7 @@
     "dependencies": {
         "core": "*"
     },
+    "icon": "icon.png",
     "files": [
         "README.md",
         "mb.ts",
