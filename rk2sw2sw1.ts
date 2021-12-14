@@ -4,7 +4,7 @@ namespace stem {
      * TFW-RK2の人感センサーが反応しているとき真を返します。
      */
     //% blockId=human_detection block="人が動いた"
-    //% group="RK2"
+    //% group="RK2, RK3"
     //% weight=100
     export function humanDetection(): boolean {
         if (pins.digitalReadPin(DigitalPin.P2) == 1) {
@@ -19,7 +19,7 @@ namespace stem {
      * @param lightThreshold number of brightness - threshold, eg: 15
      */
     //% block="%lightThreshold|より暗いときに人が動いた"
-    //% group="RK2"
+    //% group="RK2, RK3"
     //% blockId=isHumanDetectionAndDarkWithThreshold
     //% lightThreshold.min=0 lightThreshold.max=255
     //% weight=95
@@ -35,7 +35,7 @@ namespace stem {
      */
     //% blockId=is_human_detection_and_dark
     //% block="暗いときに人が動いた"
-    //% group="RK2"
+    //% group="RK2, RK3"
     //% weight=90
     export function isHumanDetectionAndDark(): boolean {
         if (humanDetection() && isDark()) {
@@ -50,7 +50,7 @@ namespace stem {
      * TFW-RK2, TFW-SW2, TFW-SW1 のスイッチをONします。
      */
     //% blockId=turn_on block="Switch Turn ON"
-    //% group="RK2, SW2, SW1"
+    //% group="RK2, RK3, SW2, SW1"
     //% weight=80
 	//% block="制御スイッチON"
     export function turnON(): void {
@@ -62,7 +62,7 @@ namespace stem {
      * TFW-RK2, TFW-SW2, TFW-SW1 のスイッチをOFFします。
      */
     //% blockId=turn_off block="Switch Turn OFF"
-    //% group="RK2, SW2, SW1"
+    //% group="RK2, RK3, SW2, SW1"
     //% weight=70
     //% block="制御スイッチOFF"
     export function turnOFF(): void {
